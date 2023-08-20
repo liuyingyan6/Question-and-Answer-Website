@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用过滤器</title>
+</head>
+<body>
+<div>用户名{{ user.username }}的字数为{{ user.username | length }}</div>
+{#这里是使用了jinji2的内置过滤器length#}
+{# | 是管道符#}
+
+<div>现在的时间是：{{ time|dformat }}</div>
+{#使用自定义的过滤器#}
+</body>
+</html>

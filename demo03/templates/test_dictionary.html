@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>person = {{ person }}</div>
+{#打印person结果为{'person_name': 'kk', 'email': 'kk@aol.com'}，确实可以显示内容，但也不建议直接使用#}
+<div>person_name = {{ person.person_name }} / {{ person['person_name'] }}</div>
+{#两种写法都可以，第一种比较常用#}
+<div>email = {{ person.email }} / {{ person['email'] }} </div>
+</body>
+</html>

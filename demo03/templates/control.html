@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制语句</title>
+</head>
+<body>
+<!--这里使用的都是Jinja2模板语言-->
+<!--使用if语句 => 记得最后要加endif-->
+{% if age>18 %}
+<div>您已满18岁，可以进入网吧</div>
+{% elif age ==18 %}
+<div>您刚满18岁，可以进入网吧，但需要父母陪同</div>
+{% else %}
+<div>您未满18岁，不可以进入网吧</div>
+{% endif %}
+
+<hr>
+<br><br>
+<!--这里使用for循环 => 记得最后要加endfor-->
+{% for book in books %}
+<div>图书名称:{{book.name}},作者：{{book.author}}</div>
+{% endfor %}
+</body>
+</html>

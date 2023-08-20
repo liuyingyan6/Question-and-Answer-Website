@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>user = {{ user }}</div>
+{#直接打印user显示为<app.User object at 0x000002955A757670>，所以不要用#}
+<div>username = {{ user.username }}</div>
+<div>user = {{ user.email }}</div>
+</body>
+</html>

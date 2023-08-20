@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/myCSS.css')}}">
+    <script src="{{url_for('static',filename='js/myJS.js')}}"></script>
+</head>
+<body>
+<img src="{{url_for('static',filename='1.jpg')}}" alt="">
+<img src="{{url_for('static',filename='imgs/2.jpg')}}" alt="">
+<!--加上花括号，程序会把它识别成一个函数或者变量-->
+<!--第一个'static'是固定的写法-->
+</body>
+</html>

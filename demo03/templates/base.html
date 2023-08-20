@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div>这是父模板顶部的内容</div>
+<div><a href="#">首页</a></div>
+<div><a href="#">新闻</a></div>
+<hr>
+{% block body%} {% endblock %}
+<hr>
+<footer>这是父模板底部的标签</footer>
+</body>
+</html>
