@@ -1,5 +1,7 @@
 # 存放配置信息
 
+SECRET_KEY = "NFIODANSFOWNFOBFO"  # session加密用到的盐
+
 # mysql数据库的配置信息
 HOSTNAME = "127.0.0.1"  # ip地址
 PORT = 3306  # 端口号

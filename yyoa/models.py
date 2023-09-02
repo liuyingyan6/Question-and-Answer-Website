@@ -7,7 +7,7 @@ class UserModel(db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(100), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(300), nullable=False)
     email = db.Column(db.String(100), nullable=False, unique=True)
     join_time = db.Column(db.DateTime, default=datetime.now())
 
@@ -17,3 +17,31 @@ class EmailCaptchaModel(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(100), nullable=False)
     captcha = db.Column(db.String(100), nullable=False)
+
+
+class QuestionModel(db.Model):
+    __tablename__ = "question"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    create_time = db.Column(db.DateTime, default=datetime.now())
+
+    # 外键
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    author = db.relationship(UserModel, backref="questions")
+
+
+class AnswerModel(db.Model):
+    __tablename__ = "answer"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    content = db.Column(db.Text, nullable=False)
+    create_time = db.Column(db.DateTime, default=datetime.now())
+
+    # 外键
+    question_id = db.Column(db.Integer, db.ForeignKey("question.id"))
+    author_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+    # 关系，反向搜索，从问题找到所有答案
+    question = db.relationship(QuestionModel,
+                               backref=db.backref("answers", order_by=create_time.desc()))  # 根据创建时间排序，防止显示时越早的排在越前面
+    author = db.relationship(UserModel, backref="answers")

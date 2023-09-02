@@ -11,7 +11,7 @@
             <div class="col"></div>
             <div class="col-10">
                 <ul class="question-ul">
-                  {% for question in questions %}
+                  {% for question in questions %} {#循环questions展示内容#}
                     <li>
                         <div class="side-question">
                             <img class="side-question-avatar" src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="">
